@@ -52,9 +52,9 @@ def __getGuess(word, index, dictionary):
             if answer in lines:
                 return answer
             else:
-                print(Colors.UNDERLINE + "That word is not in our dictionary" + Colors.END)
+                print(Colors.RED + Colors.UNDERLINE + "That word is not in our dictionary" + Colors.END)
         else:
-            print(Colors.UNDERLINE + "Guess must be " + str(word.getLength()) + " letters long." + Colors.END)
+            print(Colors.RED + Colors.UNDERLINE + "Guess must be " + str(word.getLength()) + " letters long." + Colors.END)
 
 
 def __evalGuess(word, guess, index):

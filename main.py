@@ -65,13 +65,14 @@ def __introMessage():
 
 
 def __numberInput():
+    print()
+    print(Colors.GREEN + "  Easy mode: 4 letters" + Colors.END)
+    print(Colors.YELLOW + "Normal mode: 5 letters" + Colors.END)
+    print(Colors.CYAN + "  Hard mode: 6 letters" + Colors.END)
+    print(Colors.BLUE + "   Insanity: 7 letters" + Colors.END)
     selection = True
     while selection:
 
-        print(Colors.GREEN + "  Easy mode: 4 letters" + Colors.END)
-        print(Colors.YELLOW + "Normal mode: 5 letters" + Colors.END)
-        print(Colors.RED + "  Hard mode: 6 letters" + Colors.END)
-        print(Colors.BLUE + "   Insanity: 7 letters" + Colors.END)
         inputLength = input("How many letters do you want in your word? (4 - 7):  ")
         try:
             inputLength = int(inputLength)
@@ -79,8 +80,11 @@ def __numberInput():
                 if inputLength <= 7:
                     return inputLength
                 else:
-                    print(Colors.UNDERLINE + "Number must be less than or equal to 7" + Colors.END)
+                    print(Colors.RED + Colors.UNDERLINE + "Number must be less than or equal to 7" + Colors.END)
+                    print()
             else:
-                print(Colors.UNDERLINE + "Number must be greater than or equal to 4" + Colors.END)
+                print(Colors.RED + Colors.UNDERLINE + "Number must be greater than or equal to 4" + Colors.END)
+                print()
         except ValueError:
-            print(Colors.UNDERLINE + "Input MUST be integers between 4 and 7" + Colors.END)
+            print(Colors.RED + Colors.UNDERLINE + "Input MUST be integers between 4 and 7" + Colors.END)
+            print()
