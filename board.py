@@ -18,9 +18,13 @@ class Board:
         self.length = wordLength
         self.guessBoard = []
         self.colorBoard = []
+        self.alphaBoard = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
+                           "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+        self.alphaColor = []
 
         self.makeBoard(self.guessBoard, ".")
         self.makeBoard(self.colorBoard, "BLANK")
+        self.makeAlphaColor()
 
     # --------------
     # Setter Methods
@@ -54,6 +58,9 @@ class Board:
     def getColorBoard(self):
         return self.colorBoard
 
+    def getWordIndex(self, index):
+        return self.word[index]
+
     # --------------
     # Other Methods
     # --------------
@@ -77,4 +84,24 @@ class Board:
                 else:
                     printList += letter
             print(printList)
+        print()
+
+    def makeAlphaColor(self):
+        for i in range(26):
+            self.alphaColor.append("BLANK")
+
+    def printAlpha(self):
+        printList = ""
+        for i in range(26):
+            letter = str(self.alphaBoard[i])
+            letter = letter.replace("'", "")
+            if self.alphaColor[i] == "GREEN":
+                printList += Colors.GREEN + "[" + letter + "]" + Colors.END
+            elif self.alphaColor[i] == "YELLOW":
+                printList += Colors.YELLOW + "[" + letter + "]" + Colors.END
+            elif self.alphaColor[i] == "NOT":
+                printList += Colors.FAIL + "[" + letter + "]" + Colors.END
+            else:
+                printList += "[" + letter + "]"
+        print(printList)
         print()

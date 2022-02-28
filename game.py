@@ -32,6 +32,7 @@ def __playGame(wordLength):
         guess = __getGuess(word, i, gameDict)
         __evalGuess(word, list(guess), i)
         word.printBoard()
+        __alphaColor(word, guess)
         if __checkWin(word, list(guess), i):
             break
 
@@ -65,6 +66,7 @@ def __evalGuess(word, guess, index):
         elif guess[i] in word.getWord():
             word.colorBoard[index][i] = "YELLOW"
 
+
 def __checkWin(word, guess, index):
     if word.word == guess:
         print(f"You won in {index + 1} guesses!")
@@ -75,3 +77,71 @@ def __checkWin(word, guess, index):
             print("You didn't get it. Nice try!")
             print()
         return False
+
+
+def __alphaColor(word, guess):
+    for i in range(word.getLength()):
+        index = __getAlphaIndex(guess[i])
+        if guess[i] in word.getWord():
+            word.alphaColor[index] = "YELLOW"
+        elif word.getWordIndex(i) == guess[i]:
+            word.alphaColor[index] = "GREEN"
+        else:
+            word.alphaColor[index] = "NOT"
+
+    word.printAlpha()
+
+
+def __getAlphaIndex(guess):
+    if guess == "a":
+        return 0
+    elif guess == "b":
+        return 1
+    elif guess == "c":
+        return 2
+    elif guess == "d":
+        return 3
+    elif guess == "e":
+        return 4
+    elif guess == "f":
+        return 5
+    elif guess == "g":
+        return 6
+    elif guess == "h":
+        return 7
+    elif guess == "i":
+        return 8
+    elif guess == "j":
+        return 9
+    elif guess == "k":
+        return 10
+    elif guess == "l":
+        return 11
+    elif guess == "m":
+        return 12
+    elif guess == "n":
+        return 13
+    elif guess == "o":
+        return 14
+    elif guess == "p":
+        return 15
+    elif guess == "q":
+        return 16
+    elif guess == "r":
+        return 17
+    elif guess == "s":
+        return 18
+    elif guess == "t":
+        return 19
+    elif guess == "u":
+        return 20
+    elif guess == "v":
+        return 21
+    elif guess == "w":
+        return 22
+    elif guess == "x":
+        return 23
+    elif guess == "y":
+        return 24
+    elif guess == "z":
+        return 25
