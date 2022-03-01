@@ -1,5 +1,7 @@
 import random
 import board
+import time
+import sys
 
 
 class Colors:
@@ -18,6 +20,9 @@ class Colors:
 
 def __playGame(wordLength):
 
+    # Start a timer
+    startTime = time.time()
+
     # Obtain a random word from the dictionary
     gameDict = "Dictionaries/" + str(wordLength) + ".txt"
     randomWord = __randomLine(gameDict).lower()
@@ -35,6 +40,10 @@ def __playGame(wordLength):
         __alphaColor(word, guess)
         if __checkWin(word, list(guess), i):
             break
+
+    # End timer, give report
+    endTime = time.time()
+    __giveTime(round(endTime - startTime))
 
 
 def __randomLine(textFile):
@@ -145,3 +154,17 @@ def __getAlphaIndex(guess):
         return 24
     elif guess == "z":
         return 25
+
+
+def __giveTime(time):
+    if time <= 1:
+        print(f"Game was completed in {time} second")
+    elif time <= 59:
+        print(f"Game was completed in {time} seconds")
+    elif time > 60:
+        minutes = time / 60
+        seconds = time % 60
+        if minutes <= 1:
+            print(f"Game was completed in {minutes} minute and {seconds} seconds")
+        else:
+            print(f"Game was completed in {minutes} minutes and {seconds} seconds")

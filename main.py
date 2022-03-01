@@ -31,11 +31,12 @@ def __main():
         continuePlaying = __keepPlaying()
 
     # Print exit message
-    print("")
+    print()
     print(Colors.PURPLE + "Thank you for playing!" + Colors.END)
 
 
 def __keepPlaying():
+    print()
     yesList = ("YES", "Yes", "yes", "Y", "y")
     noList = ("NO", "No", "no", "N", "n")
 
