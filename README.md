@@ -1,5 +1,5 @@
 # Wordle: Python Edition
-### By Caleb Jensen
+### By Caleb Jensen (2022)
 
 -----------------------
 
@@ -19,6 +19,9 @@ This game has 4 different play modes:
   * Normal Mode: Like standard Wordle, this uses 5-letter words, from a 6,000 word dictionary
   * Hard Mode: Uses 6-letter words, pulled from a 10,539 word dictionary
   * Insanity: Uses 7-letter words, pulled from a 40,046 word dictionary. These words can be very hard!
+ 
+For each game mode, you will get `n+1` chances to guess. For example, if you choose 5-letter words, you will have 6 
+chances to guess the word.
 
 ------------------------
 
