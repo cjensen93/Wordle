@@ -15,8 +15,8 @@ To play the game:
 
 ### About the Game
 This game has 4 different play modes:
-  * Easy Mode: Uses 4-letter words, pulled from a 3110 word dictionary
-  * Normal Mode: Like standard Wordle, this uses 5-letter words, from a 6000 word dictionary
+  * Easy Mode: Uses 4-letter words, pulled from a 3,110 word dictionary
+  * Normal Mode: Like standard Wordle, this uses 5-letter words, from a 6,000 word dictionary
   * Hard Mode: Uses 6-letter words, pulled from a 10,539 word dictionary
   * Insanity: Uses 7-letter words, pulled from a 40,046 word dictionary. These words can be very hard!
 
