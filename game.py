@@ -57,6 +57,9 @@ def __getGuess(word, index, dictionary):
     while guess:
         print()
         answer = str(input("Guess number " + str(index + 1) + ":  "))
+        if answer == "!!!":
+            print("Thanks for playing!")
+            sys.exit(0)
         if len(answer) == word.getLength():
             lines = open(dictionary).read().splitlines()
             if answer in lines:
@@ -79,22 +82,20 @@ def __evalGuess(word, guess, index):
 def __checkWin(word, guess, index):
     if word.word == guess:
         print(f"You won in {index + 1} guesses!")
-        print()
         return True
     else:
         if index == word.getLength():
             print("You didn't get it. Nice try!")
-            print()
         return False
 
 
 def __alphaColor(word, guess):
     for i in range(word.getLength()):
         index = __getAlphaIndex(guess[i])
-        if guess[i] in word.getWord():
-            word.alphaColor[index] = "YELLOW"
-        elif word.getWordIndex(i) == guess[i]:
+        if word.getWordIndex(i) == guess[i]:
             word.alphaColor[index] = "GREEN"
+        elif guess[i] in word.getWord():
+            word.alphaColor[index] = "YELLOW"
         else:
             word.alphaColor[index] = "NOT"
 
@@ -156,14 +157,14 @@ def __getAlphaIndex(guess):
         return 25
 
 
-def __giveTime(time):
-    if time <= 1:
-        print(f"Game was completed in {time} second")
-    elif time <= 59:
-        print(f"Game was completed in {time} seconds")
-    elif time > 60:
-        minutes = time / 60
-        seconds = time % 60
+def __giveTime(timer):
+    if timer <= 1:
+        print(f"Game was completed in {timer} second")
+    elif timer <= 59:
+        print(f"Game was completed in {timer} seconds")
+    elif timer > 60:
+        minutes = timer / 60
+        seconds = timer % 60
         if minutes <= 1:
             print(f"Game was completed in {minutes} minute and {seconds} seconds")
         else:
