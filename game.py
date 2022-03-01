@@ -163,9 +163,12 @@ def __giveTime(timer):
     elif timer <= 59:
         print(f"Game was completed in {timer} seconds")
     elif timer > 60:
-        minutes = timer / 60
+        minutes = timer // 60
         seconds = timer % 60
-        if minutes <= 1:
-            print(f"Game was completed in {minutes} minute and {seconds} seconds")
-        else:
-            print(f"Game was completed in {minutes} minutes and {seconds} seconds")
+        minuteWord = "minute"
+        secondWord = "second"
+        if minutes >= 2:
+            minuteWord = "minutes"
+        if seconds >= 2:
+            secondWord = "seconds"
+        print(f"Game was completed in {minutes} {minuteWord} and {seconds} {secondWord}")
