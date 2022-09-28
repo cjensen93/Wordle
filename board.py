@@ -8,7 +8,7 @@ class Colors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
-    # Put after every color change to revert back to normal text
+    # Put after every color change to revert to normal text
     END = '\033[0m'
 
 
@@ -17,6 +17,7 @@ class Board:
         self.word = word
         self.length = wordLength
         self.guessBoard = []
+        self.guessesList = []
         self.colorBoard = []
         self.alphaBoard = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
                            "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
